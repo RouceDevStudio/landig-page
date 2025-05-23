@@ -91,12 +91,19 @@ const contenedor = document.getElementById("planes");
   });
 
 
-  document.addEventListener("DOMContentLoaded", () => {
+ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contacto");
+    const submitBtn = document.getElementById("alert");
+
+    // 🔥 Despierta el backend en Render al cargar la página
+    fetch("https://inventario-backend-qf0d.onrender.com/")
+        .then(() => console.log("✅ Backend activado"))
+        .catch(err => console.log("❌ No se pudo activar el backend:", err));
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
+        // 💬 Recolecta los datos del formulario
         const nombre = document.getElementById("Nombre").value;
         const email = document.getElementById("E-mail").value;
         const servicio = document.getElementById("servicio").value;
@@ -110,6 +117,10 @@ const contenedor = document.getElementById("planes");
             empleado: "Formulario landing page"
         };
 
+        // ⏳ Desactiva botón mientras envía
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Enviando...";
+
         try {
             const res = await fetch("https://inventario-backend-qf0d.onrender.com/api/enviar-correo", {
                 method: "POST",
@@ -122,14 +133,20 @@ const contenedor = document.getElementById("planes");
             const data = await res.json();
 
             if (res.ok) {
-                alert("Formulario enviado con éxito 🚀");
-                form.reset(); // Limpia el formulario
+                alert("✅ Formulario enviado con éxito 🚀");
+                form.reset(); // 🧼 Limpia el formulario
+                console.log("✅ Datos enviados y formulario reseteado");
             } else {
-                alert("Error al enviar: " + data.message);
+                console.error("❌ Error en la respuesta:", data);
+                alert("❌ Error al enviar: " + data.message);
             }
         } catch (error) {
-            console.error("Error al enviar el formulario:", error);
-            alert("Error de conexión con el servidor.");
+            console.error("❌ Error de conexión con el servidor:", error);
+            alert("⚠️ Error de conexión con el servidor.");
+        } finally {
+            // 🔄 Activa el botón otra vez
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Enviar";
         }
     });
 });
