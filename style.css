@@ -447,9 +447,9 @@ h2{
 
 
 .contenedor-registro{
-margin: 0;
+margin:0;
 width: 100%;
-height: 39rem;
+height: 49rem;
 }
 
 .registro-formulario{
@@ -490,7 +490,7 @@ height: 39rem;
 .footer{
     width: 100%;
     background: var(--fondo-blanco-menu);
-    min-height: 100px;
+    min-height: 129px;
     padding: 20px 50px;
     display: flex;
     justify-content: center;
