@@ -20,6 +20,7 @@ const darkMode = document.querySelector("#dark-mode");
 
 darkMode.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
+  darkMode.classList.toggle("animaDarkMode");
 })
 
 
@@ -149,4 +150,12 @@ const contenedor = document.getElementById("planes");
             submitBtn.innerText = "Enviar";
         }
     });
+});
+
+const contacButton = document.querySelector(".boton-up")
+const extenderBarra = document.querySelector(".contenedor-boton-redes");
+
+contacButton.addEventListener("click", () => {
+  extenderBarra.classList.toggle("up-active");
+  contacButton.classList.toggle("redes-boton-anim");
 });

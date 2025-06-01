@@ -92,23 +92,113 @@ body{
     transition: all .3s ease-in-out;
 }
 
-.contenedor-boton-what{
+.contenedor-boton-redes{
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    right: 25px;
+    border-radius: 20px;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+    width: 79px;
+    height: 5rem;
+    object-fit: contain;
+    padding: 10px 0;
+    transition: all .3s ease-in-out;
 }
 
-.boton-whatsapp{
-    font-size: 50px;
+.contenedor-boton-redes.up-active{
+    height: 25rem;
+    width: 89px;
+    transition: all .3s ease-in-out;
+}
+
+.contenedor-boton-redes li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+.contenedor-boton-redes .boton-up{
+    font-size: 66px;
     background-color: var(--color-verde);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     color: white;
-    width: 60px;
-    height: 60px;
+    width: 66px;
+    height: 66px;
+    transition: all .3s ease-in-out;
+    border: none;
+
+}
+
+.boton-up.redes-boton-anim{
+    background-color: #0fe403;
+    transition: all .3s ease-in-out;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transform: rotate(180deg);
+}
+
+.contenedor-boton-redes ul li a ion-icon{
+    font-size: 50px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: all .3s ease-in-out;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.contenedor-boton-redes .WhatsApp{
+    background-color: #25D366;
+    color: white;
+}
+
+.contenedor-boton-redes .WhatsApp:hover{
+    background-color: #128C7E;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transform: translateY(-5px);
+}
+
+.contenedor-boton-redes .LinkedIn{
+    background-color: #0077B5;
+    color: white;
+}
+
+.contenedor-boton-redes .LinkedIn:hover{
+    background-color: #005582;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transform: translateY(-5px);
+}
+
+.contenedor-boton-redes .GitHub{
+    background-color: #24292E;
+    color: white;
+}
+
+.contenedor-boton-redes .GitHub:hover{
+    background-color: #1F2328;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transform: translateY(-5px);
+}
+
+.contenedor-boton-redes .Email{
+    background-color: #EA4335;
+    color: white;
+}
+
+.contenedor-boton-redes .Email:hover{
+    background-color: #D93025;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transform: translateY(-5px);
 }
 
 /*barra de navegacion*/
@@ -171,7 +261,7 @@ body{
     background-color: var(--fondo-blanco-menu);
     object-fit: contain;
     flex-wrap: wrap;
-
+    transition: all .3s ease-in-out;
 }
 
 #dark-mode ion-icon{
@@ -180,7 +270,10 @@ body{
     font-weight: 800;
 }
 
-
+#dark-mode.animaDarkMode{
+    transform: rotate(180deg);
+    transition: all .3s ease-in-out;
+}
 
 .ocultar-nav{
     background-color: var(--fondo-blanco-menu);
