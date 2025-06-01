@@ -106,12 +106,12 @@ body{
     width: 79px;
     height: 5rem;
     object-fit: contain;
-    padding: 10px 0;
+    padding: 15px 0;
     transition: all .3s ease-in-out;
 }
 
 .contenedor-boton-redes.up-active{
-    height: 25rem;
+    height: 30rem;
     width: 89px;
     transition: all .3s ease-in-out;
 }
@@ -186,6 +186,16 @@ body{
 
 .contenedor-boton-redes .GitHub:hover{
     background-color: #1F2328;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transform: translateY(-5px);
+}
+
+.contenedor-boton-redes .Instagram{
+    background-color: #E1306C;
+    color: white;
+}
+.contenedor-boton-redes .Instagram:hover{
+    background-color: #C13584;
     box-shadow: 0 5px 15px var(--shadow-color);
     transform: translateY(-5px);
 }
